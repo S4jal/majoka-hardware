@@ -64,13 +64,21 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255,255,255,0.95);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
-.brand { display: flex; align-items: center; gap: 12px; transition: transform .3s var(--ease); }
+.brand { display: flex; align-items: center; gap: 18px; transition: transform .3s var(--ease); }
 .brand:hover { transform: translateY(-1px); }
-.brand-logo { height: 48px; width: auto; display: block; transition: transform .35s var(--ease); }
+.brand-logo { height: 64px; width: auto; display: block; transition: transform .35s var(--ease); }
 .brand:hover .brand-logo { transform: scale(1.03); }
-.menu { display: flex; gap: 30px; }
+.brand-tagline {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px; font-weight: 300; font-style: italic;
+  color: var(--blue); letter-spacing: 0.3px;
+  padding-left: 18px; line-height: 1;
+  border-left: 1px solid var(--border);
+  white-space: nowrap;
+}
+.menu { display: flex; gap: 38px; }
 .menu a {
-  font-size: 13px; font-weight: 500; letter-spacing: 1.6px;
+  font-size: 15px; font-weight: 500; letter-spacing: 1.8px;
   color: var(--muted); position: relative; padding: 4px 0;
   transition: color .2s var(--ease);
 }
@@ -467,7 +475,8 @@ footer.bottom .build { color: #fff; font-weight: 700; }
 @media (max-width: 600px) {
   .container { padding: 0 18px; }
   .nav-inner { padding-top: 14px; padding-bottom: 14px; }
-  .brand-logo { height: 42px; }
+  .brand-logo { height: 50px; }
+  .brand-tagline { display: none; }
   .hero { padding: 40px 0 32px; }
   .hero h1 { font-size: 46px; letter-spacing: -1.8px; }
   .cat { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
@@ -487,6 +496,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
   <div class="container nav-inner">
     <a href="index.html" class="brand" aria-label="Majoka Hardware home">
       <img src="img/logo.png" alt="Majoka Hardware" class="brand-logo">
+      <span class="brand-tagline">Build with us</span>
     </a>
     <nav class="menu">
       <a href="index.html">HOME</a>
@@ -571,7 +581,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-01">
       <div class="cat-left">
         <div class="cat-num">01</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1575493438282-4e0fb32d1bdd?w=600&q=80&auto=format&fit=crop" alt="Cement and building materials" loading="lazy"></div>
+        <div class="cat-img"><img src="img/cement.jpeg" alt="Cement and building materials" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Cement &amp; Building Materials</h3>
@@ -588,7 +598,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-02">
       <div class="cat-left">
         <div class="cat-num">02</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1644065172790-1dd8212bd47f?w=600&q=80&auto=format&fit=crop" alt="Steel roofing sheets" loading="lazy"></div>
+        <div class="cat-img"><img src="img/roofing.webp" alt="Steel roofing sheets" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Steel &amp; Roofing</h3>
@@ -604,7 +614,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-03">
       <div class="cat-left">
         <div class="cat-num">03</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?w=600&q=80&auto=format&fit=crop" alt="Timber and roof trusses" loading="lazy"></div>
+        <div class="cat-img"><img src="img/timber.jpg" alt="Timber and roof trusses" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Timber &amp; Trusses</h3>
@@ -622,7 +632,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-04">
       <div class="cat-left">
         <div class="cat-num">04</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1742858046408-45953cab801e?w=600&q=80&auto=format&fit=crop" alt="Plumbing pipes and sanitary fittings" loading="lazy"></div>
+        <div class="cat-img"><img src="img/plumbing.jpg" alt="Plumbing pipes and sanitary fittings" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Plumbing &amp; Sanitary</h3>
@@ -642,7 +652,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-05">
       <div class="cat-left">
         <div class="cat-num">05</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=600&q=80&auto=format&fit=crop" alt="Electrical wires and cabling" loading="lazy"></div>
+        <div class="cat-img"><img src="img/electrical.jpg" alt="Electrical wires and cabling" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Electrical &amp; Cabling</h3>
@@ -670,7 +680,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-07">
       <div class="cat-left">
         <div class="cat-num">07</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1523350165414-082d792c4bcc?w=600&q=80&auto=format&fit=crop" alt="Ceramic and porcelain tiles" loading="lazy"></div>
+        <div class="cat-img"><img src="img/tiles.jpeg" alt="Ceramic and porcelain tiles" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Tiles</h3>
@@ -732,7 +742,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-11">
       <div class="cat-left">
         <div class="cat-num">11</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1593285247650-cd7bb44adcfd?w=600&q=80&auto=format&fit=crop" alt="Fencing and gumpoles" loading="lazy"></div>
+        <div class="cat-img"><img src="img/gumpoles.png" alt="Fencing and gumpoles" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Fencing &amp; Gumpoles</h3>
@@ -747,7 +757,7 @@ footer.bottom .build { color: #fff; font-weight: 700; }
     <article class="cat reveal" id="cat-12">
       <div class="cat-left">
         <div class="cat-num">12</div>
-        <div class="cat-img"><img src="https://images.unsplash.com/photo-1630732347607-3a89a66447e9?w=600&q=80&auto=format&fit=crop" alt="Water storage tanks" loading="lazy"></div>
+        <div class="cat-img"><img src="img/water-tanks.webp" alt="Water storage tanks" loading="lazy"></div>
       </div>
       <div class="cat-body">
         <h3 class="cat-title">Water Tanks</h3>
