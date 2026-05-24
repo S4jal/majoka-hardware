@@ -116,7 +116,9 @@
   }
 
   // ---------- Form (reach-us) ----------
-  const reachForm = document.querySelector('.form-wrap .form');
+  // Only intercept the legacy static form. Skip CF7's <form> — it handles its
+  // own AJAX submit and renders its own response banner.
+  const reachForm = document.querySelector('.form-wrap .form:not(.wpcf7-form)');
   if (reachForm) {
     reachForm.addEventListener('submit', (e) => {
       e.preventDefault();

@@ -1,0 +1,98 @@
+/* ============================================
+   MAJOKA HARDWARE — About page overrides
+   Extracted from about.html inline <style>.
+   Loaded only on the About template.
+   ============================================ */
+
+/* ---- HERO ---- */
+.hero { padding: 48px 0 56px; }
+.hero-grid { grid-template-columns: 1.15fr 1fr; gap: 56px; }
+.hero-lede { margin: 24px 0 28px; }
+.hero h1 .blue { display: block; }
+
+/* ---- STORY ---- */
+.story { padding: 20px 0 56px; }
+.story-inner {
+  grid-template-columns: 1fr 1.6fr;
+  gap: 56px;
+  max-width: 1200px;
+}
+.story-head h2 {
+  font-size: 46px;
+  letter-spacing: -1.2px;
+}
+.story-body p {
+  font-size: 16.5px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.story-tagline {
+  font-size: 18px !important;
+  padding-top: 14px;
+  margin-top: 10px !important;
+}
+
+/* ---- STATS (about variant has bigger numbers) ---- */
+.stats-wrap .stats { margin-top: 0; }
+.stats-wrap .stat { padding: 40px 28px; }
+.stat-num {
+  font-size: 36px;
+  letter-spacing: -0.9px;
+}
+.stat-label {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* ---- BELIEFS ---- */
+.beliefs { padding: 56px 0; background: var(--bg-cream); }
+.beliefs-head { margin-bottom: 36px; }
+.beliefs-head h2 {
+  font-size: 46px;
+  letter-spacing: -1.2px;
+  max-width: 820px;
+}
+.belief-card { padding: 32px 28px; }
+.belief-icon { font-size: 34px; }
+.belief-num {
+  font-size: 12px;
+  margin-top: 22px;
+}
+.belief-title { font-size: 20px; }
+.belief-body {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+/* ---- BLUE CTA ---- */
+.blue-cta { padding: 56px 0; }
+.blue-cta .head .ti-truck-delivery { font-size: 42px; margin-bottom: 14px; }
+.blue-cta h2 {
+  font-size: 46px;
+  letter-spacing: -1.3px;
+}
+.blue-cta p {
+  font-size: 17px;
+  margin-top: 12px;
+  max-width: 600px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .story-inner { grid-template-columns: 1fr; gap: 28px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
+  .beliefs-grid { grid-template-columns: 1fr; gap: 18px; }
+  .blue-cta-grid { grid-template-columns: 1fr; gap: 24px; }
+  .blue-cta-buttons { justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 22px; }
+  .stat:last-child { border-bottom: none; }
+  .hero { padding: 36px 0 40px; }
+  .hero h1 { font-size: 46px; letter-spacing: -1.8px; }
+  .story-head h2, .beliefs-head h2, .blue-cta h2 { font-size: 34px; }
+}

@@ -1,0 +1,109 @@
+/* ============================================
+   MAJOKA HARDWARE — Contact Form 7 design overrides
+   Makes CF7's default markup look identical to the
+   pre-CF7 hand-written form on reach-us.
+   ============================================ */
+
+/* CF7 wraps each form-tag in a span; force block + full-width so the
+   input fills its .field parent (same layout as the static form). */
+.form-wrap .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+/* CF7 outputs the form via wp_kses, but it also inserts an invisible
+   hidden-fields container. Make sure that doesn't break the grid layout. */
+.form-wrap .wpcf7-form > p:first-child:empty,
+.form-wrap .wpcf7-form .screen-reader-response {
+  display: none !important;
+}
+
+/* The form itself receives both `.wpcf7-form` and our `.form` class
+   (added via wpcf7_form_class_attr filter). The grid styles in main.css
+   already apply because of `.form`. Nothing extra needed here. */
+
+/* Submit button — CF7 emits <input type="submit">. The btn/btn-red
+   classes are applied via [submit class:btn class:btn-red ...], so all
+   existing button styles already work. Just add cursor + reset border. */
+.form-wrap .wpcf7-submit {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Validation tooltip — inline red message under invalid fields. */
+.form-wrap .wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--red);
+  letter-spacing: 0.2px;
+}
+
+/* Invalid input — red border to match brand. */
+.form-wrap .wpcf7-not-valid {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(225, 37, 27, 0.10) !important;
+}
+
+/* Response output — the banner that appears after a submit attempt. */
+.form-wrap .wpcf7 form .wpcf7-response-output,
+.form-wrap .wpcf7-response-output {
+  grid-column: 1 / -1;
+  margin: 18px 0 0 !important;
+  padding: 14px 18px !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+.form-wrap .wpcf7 form.sent .wpcf7-response-output,
+.form-wrap .wpcf7 form.failed .wpcf7-response-output,
+.form-wrap .wpcf7 form.aborted .wpcf7-response-output,
+.form-wrap .wpcf7 form.invalid .wpcf7-response-output,
+.form-wrap .wpcf7 form.unaccepted .wpcf7-response-output,
+.form-wrap .wpcf7 form.payment-required .wpcf7-response-output,
+.form-wrap .wpcf7 form.spam .wpcf7-response-output {
+  border-width: 1px !important;
+}
+.form-wrap .wpcf7 form.sent .wpcf7-response-output {
+  background: rgba(31, 122, 201, 0.06);
+  border-color: var(--blue) !important;
+  color: var(--blue-dark);
+}
+.form-wrap .wpcf7 form.failed .wpcf7-response-output,
+.form-wrap .wpcf7 form.aborted .wpcf7-response-output,
+.form-wrap .wpcf7 form.invalid .wpcf7-response-output,
+.form-wrap .wpcf7 form.spam .wpcf7-response-output {
+  background: #FEEEEC;
+  border-color: var(--red) !important;
+  color: var(--red-dark);
+}
+
+/* AJAX spinner — keep it muted, inline next to the submit button. */
+.form-wrap .wpcf7-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+  background-color: var(--blue);
+}
+
+/* Placeholder fix — CF7 sometimes inserts placeholder as initial value. */
+.form-wrap .wpcf7-form-control.wpcf7-text,
+.form-wrap .wpcf7-form-control.wpcf7-email,
+.form-wrap .wpcf7-form-control.wpcf7-tel,
+.form-wrap .wpcf7-form-control.wpcf7-select,
+.form-wrap .wpcf7-form-control.wpcf7-textarea {
+  width: 100%;
+}
+
+/* The .form-foot row should still span both columns on the grid. */
+.form-wrap .wpcf7-form .form-foot {
+  grid-column: 1 / -1;
+}
